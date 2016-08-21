@@ -1,43 +1,79 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Message Sample</title>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
-        <script src="msg.js"></script>
-        <link href="msg.css" rel="stylesheet">
-        </head>
-        <body>
-            <h1>LLamasoft Message Exercise
-            </h1>
-
-            <div>
-
+  <head>
+    <title>Message Sample</title>
+      <link rel="icon" href="images/LLamasoft_favicon.png" sizes="32x32"/>
+      <link rel="icon" href="images/LLamasoft_favicon.png" sizes="192x192"/>
+      <link href="css/normalize.css" rel="stylesheet">
+      <link href="css/bootstrap.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Happy+Monkey" rel="stylesheet">
+      <link href="css/toastr.css" rel="stylesheet">
+      <link href="css/msg.css" rel="stylesheet">
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a id="llamaLogo" href="http://www.llamasoft.com/">
+            <img src="images/llamasoft_logo.png" alt="LLamasoft Logo">
+          </a>
+          <ul>
+            <li><a href="#">Solutions</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Resources</a></li>
+            <li><a href="#">Company</a></li>
+            <li><button type="button" class="btn btn-primary btn-lg">Contact</button></li>
+            <li><i class="glyphicon glyphicon-search"></i></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xs-8">
+          <h1>LLamasoft Message Exercise</h1>
+          <div id="accordion">
+            <h2>
+              <button class="btn btn-primary btn-lg" type="button" data-toggle="collapse" href="#llamaCollapse" aria-expanded="false" aria-controls="llamaCollapse">Open Instructions</button>
+            </h2>
+            <div class="collapse" id="llamaCollapse">
+              <div class="card card-block">
                 <p>
-                Implement a messaging system to replace the random alert boxes that come up. The messaging system
-                should meet the following criteria
-                <ul>
-                <li>Messages should appear near the top of the page</li>
-                <li>Messages should fade out after 3 seconds</li>
-                <li>If a new message appears before the previous message fades out, it should appear below the most recent visible message.</li>
-                <li>Messages should have a close or delete box to dismiss the message before the fade out</li>
-                </ul>
+                  Implement a messaging system to replace the random alert boxes that come up. The messaging system should meet the following criteria
+                  <ul>
+                    <li>Messages should appear near the top of the page</li>
+                    <li>Messages should fade out after 3 seconds</li>
+                    <li>If a new message appears before the previous message fades out, it should appear below the most recent visible message.</li>
+                    <li>Messages should have a close or delete box to dismiss the message before the fade out</li>
+                  </ul>
                 </p>
-                
                 <p>
-                In addition to the above features, implement other updates you think might be helpful. E.g. Add an indicator
-                to let the user know that the messages are running in addition to the text change on the button, update the
-                layout to make the page more readable, etc. Feel free to use
-                any third party libraries you find helpful. jQuery and underscore are already referenced.
+                  In addition to the above features, implement other updates you think might be helpful. E.g. Add an indicator to let the user know that the messages are running in addition to the text change on the button, update the layout to make the page more readable, etc. Feel free to use any third party libraries you find helpful. jQuery and underscore are already referenced.
                 </p>
+              </div>
             </div>
-
-            <div>
-            <button type="button" id="msgButton">Start Messages</button>
-            </div>
-            
-            <div class="footer">
-                <span>&copy; LLamasoft 2016</span>
-            </div>
-        </body>
-    </html>
+          </div>
+          <div>
+            <button class="btn btn-primary btn-lg" type="button" id="msgButton" onclick="llamaMessages()">Start Messages</button>
+            <button class="btn btn-primary btn-lg" type="button" id="shugMsgButton" onclick="shugMessage()">What Makes Shugmi Qualified?</button>
+          </div>
+        </div>
+        <!-- Space for Toasts to appear -->
+        <div class="col-xs-4">
+        </div>
+        <footer class="footer navbar-fixed-bottom">
+          <div class="container-fluid">
+            <img src="images/llamasoft-logo-dark.png" alt="Llamasoft dark logo" class="footerLogo">
+            <span>&copy; LLamasoft 2016 / Created by Shugmi Shumunov</span>
+          </div>
+        </footer>
+      </div>
+    </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+  <script src="js/bootstrap.js"></script>
+  <script src="js/toastr.js"></script>
+  <script src="js/msg.js"></script>
+  </body>
+</html>
