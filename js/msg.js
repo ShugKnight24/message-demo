@@ -25,15 +25,14 @@ $(document).ready(function(){
     "hideMethod": "fadeOut",
   }
   // When "Start Messages" is pressed
-  llamaMessages = function(){
     messageSystem = {
-        showMessage: function(msg) {
-            toastr["info"](msg);
-        }
+      showMessage: function(msg) {
+        toastr["info"](msg);
+      }
     }
 
     function showMsg() {
-        quotes = [
+      quotes = [
         "What we've got here is failure to communicate.",
         'Go ahead, make my day.',
         "I've got a bad feeling about this.",
@@ -42,7 +41,7 @@ $(document).ready(function(){
         "You're gonna need a bigger boat.",
         "Tell Mike it was only business.",
         "I have come here to chew bubble gum and kick ass, and I'm all out of bubble gum."
-        ];
+      ];
         messageSystem.showMessage(_.sample(quotes));
     }
 
@@ -52,29 +51,25 @@ $(document).ready(function(){
         loopHandle = setTimeout(loop, rand);
       }
 
-    $(function() {
-       $('#msgButton').click(function() {
-           var btn = $(this),
-          btnTxt = btn.text();
-           if (btnTxt === 'Start Messages') {
-               btn.text('Stop Messages');
-               loopHandle = setTimeout(loop, 500);
-           } else {
-               btn.text('Start Messages');
-               clearTimeout(loopHandle);
-               loopHandle = null;
-           }
-       } );
+    $('#msgButton').click(function() {
+      var btn = $(this),
+      btnTxt = btn.text();
+        if (btnTxt === 'Start Messages') {
+          btn.text('Stop Messages');
+          loopHandle = setTimeout(loop, 500);
+        } else {
+          btn.text('Start Messages');
+          clearTimeout(loopHandle);
+          loopHandle = null;
+      }
     });
-  };
 
   //When Shug button is pressed
-  shugMessage = function() {
-    shugMessageSystem = {
-        shugMessage: function(shugMsg) {
-            toastr["info"](shugMsg);
-        }
+  shugMessageSystem = {
+    shugMessage: function(shugMsg) {
+    toastr["info"](shugMsg);
     }
+  }
 
     function loop() {
         shugMsg();
@@ -83,7 +78,7 @@ $(document).ready(function(){
       }
 
     function shugMsg() {
-        qualifications = [
+      qualifications = [
         "He wants to be a LLama",
         "He loves the Ann Arbor area",
         "He is a quick learner",
@@ -94,36 +89,31 @@ $(document).ready(function(){
         "He is able to pick up new technologies quickly",
         "He loves that Llamasoft is a large company with small roots",
         "He likes that LLamasoft values their employees"
-        ];
+      ];
         shugMessageSystem.shugMessage(_.sample(qualifications));
     }
 
-    $(function() {
-       $('#shugMsgButton').click(function() {
-           var btn = $(this),
-          btnTxt = btn.text();
-           if (btnTxt === 'What Makes Shugmi Qualified?') {
-               btn.text('Wow! He would be a great LLama!');
-               shugHandle = setTimeout(loop, 500);
-           } else {
-               btn.text('What Makes Shugmi Qualified?');
-               clearTimeout(shugHandle);
-               shugHandle = null;
+    $('#shugMsgButton').click(function() {
+      var btn = $(this),
+      btnTxt = btn.text();
+        if (btnTxt === 'What Makes Shugmi Qualified?') {
+          btn.text('Wow! He would be a great LLama!');
+          shugHandle = setTimeout(loop, 500);
+      } else {
+          btn.text('What Makes Shugmi Qualified?');
+          clearTimeout(shugHandle);
+          shugHandle = null;
            }
        });
-    });
-  };
 
 //When Open Instructions button is pressed
-  $(function() {
-     $('#accordionButton').click(function() {
-        var btn = $(this),
-        btnTxt = btn.text();
-         if (btnTxt === 'Open Instructions') {
-          btn.text('Close Instructions');
-         } else {
-          btn.text('Open Instructions');
-         }
+  $('#accordionButton').click(function() {
+    var btn = $(this),
+    btnTxt = btn.text();
+      if (btnTxt === 'Open Instructions') {
+        btn.text('Close Instructions');
+    } else {
+        btn.text('Open Instructions');
+    }
      });
-  });
 });
