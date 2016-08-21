@@ -24,7 +24,7 @@ $(document).ready(function(){
     "showMethod": "fadeIn",
     "hideMethod": "fadeOut",
   }
-
+  // When "Start Messages" is pressed
   llamaMessages = function(){
     messageSystem = {
         showMessage: function(msg) {
@@ -68,6 +68,7 @@ $(document).ready(function(){
     });
   };
 
+  //When Shug button is pressed
   shugMessage = function() {
     shugMessageSystem = {
         shugMessage: function(shugMsg) {
@@ -112,4 +113,17 @@ $(document).ready(function(){
        });
     });
   };
+
+//When Open Instructions button is pressed
+  $(function() {
+     $('#accordionButton').click(function() {
+        var btn = $(this),
+        btnTxt = btn.text();
+         if (btnTxt === 'Open Instructions') {
+          btn.text('Close Instructions');
+         } else {
+          btn.text('Open Instructions');
+         }
+     });
+  });
 });
